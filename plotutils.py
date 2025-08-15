@@ -112,7 +112,7 @@ def PlotLabeledSegmentsImage(
     for key, val in segment_dictionary.items():
         seg_idx.append(key)
         segments.append(val)
-    assert list(np.unique(img)) == seg_idx, 'Incompatible segment indices.'
+    assert set( list(np.unique(img) ) ) == set( seg_idx ), 'Incompatible segment indices.'
 
     x_grid = x_grid if x_grid is not None else np.arange(img.shape[1])
     y_grid = y_grid if y_grid is not None else np.arange(img.shape[0])
